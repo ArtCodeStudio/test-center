@@ -8,18 +8,13 @@ import {
   // Delete,
 } from '@nestjs/common';
 import { PatientService } from './patient.service';
-import {
-  Patient as PatientModel,
-} from '@test-center/prisma';
+import { Patient as PatientModel } from '@test-center/prisma';
 
-@Controller()
+@Controller('api')
 export class PatientController {
-  constructor(
-    private readonly patient: PatientService,
-  ) {
+  constructor(private readonly patient: PatientService) {
     /**/
   }
-
 
   @Post('patient')
   async createPatient(
@@ -27,5 +22,4 @@ export class PatientController {
   ): Promise<PatientModel> {
     return this.patient.create(patientData);
   }
-
 }

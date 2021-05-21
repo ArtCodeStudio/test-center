@@ -4,6 +4,7 @@ import { resolve } from 'path';
 import findRoot = require('find-root');
 import { registerAs } from '@nestjs/config';
 import { NestThemeConfig } from '@ribajs/nest-theme';
+import { JwtModuleOptions } from '@nestjs/jwt';
 
 const THEME_ACTIVE = process.env.THEME_ACTIVE || 'theme';
 const ROOT = findRoot(process.cwd());
@@ -41,6 +42,11 @@ export const session = {
     secure: true,
     sameSite: 'none' as boolean | 'none' | 'lax' | 'strict',
   },
+};
+
+export const jwt: JwtModuleOptions = {
+  secret: process.env.JWT_SECRET || 'Set your own string here!',
+  signOptions: { expiresIn: '60s' },
 };
 
 export const appConfig = registerAs('app', () => ({

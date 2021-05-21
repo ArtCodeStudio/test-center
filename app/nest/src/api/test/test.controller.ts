@@ -8,15 +8,11 @@ import {
   Delete,
 } from '@nestjs/common';
 import { TestService } from './test.service';
-import {
-  Test as TestModel,
-} from '@test-center/prisma';
+import { Test as TestModel } from '@test-center/prisma';
 
-@Controller()
+@Controller('api')
 export class TestController {
-  constructor(
-    private readonly test: TestService,
-  ) {
+  constructor(private readonly test: TestService) {
     /**/
   }
 
