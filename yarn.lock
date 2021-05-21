@@ -2293,6 +2293,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/client@npm:*, @prisma/client@npm:2.23.0, @prisma/client@npm:^2.23.0":
+  version: 2.23.0
+  resolution: "@prisma/client@npm:2.23.0"
+  dependencies:
+    "@prisma/engines-version": 2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b
+  peerDependencies:
+    prisma: "*"
+  peerDependenciesMeta:
+    prisma:
+      optional: true
+  checksum: f90e8360047c5ff6f33b803d146660c6a5c248306d4ae40c11ad2e04eeaa9f0ac55e922b65e053b25ea92688d5ed343ed9f0a68326eb8e9fc4de241e1a586b97
+  languageName: node
+  linkType: hard
+
+"@prisma/engines-version@npm:2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b":
+  version: 2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b
+  resolution: "@prisma/engines-version@npm:2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b"
+  checksum: 71798acd7a9758a0dbd2238f0122a6f391528ffe0fd6b9e2551b901aca4834bf2272ae85e1be48cf513f441068733ce51d5633b76995e90c9104299d8c0b5336
+  languageName: node
+  linkType: hard
+
+"@prisma/engines@npm:2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b":
+  version: 2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b
+  resolution: "@prisma/engines@npm:2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b"
+  checksum: a0fffd848cb762adf8b027e948f0f9b20f5c7b7fcb3a4f2cbb87a20cd954c708f9b938a9bd8d6ee1f2057afe6b7a8357a0285bda3f2e503e8953ba133c93cda5
+  languageName: node
+  linkType: hard
+
 "@ribajs/babel-config@workspace:*, @ribajs/babel-config@workspace:packages/riba/infra/babel-config":
   version: 0.0.0-use.local
   resolution: "@ribajs/babel-config@workspace:packages/riba/infra/babel-config"
@@ -3695,9 +3723,11 @@ __metadata:
     "@nestjs/platform-express": ^7.6.17
     "@nestjs/schematics": ^7.3.1
     "@nestjs/testing": ^7.6.17
+    "@prisma/client": ^2.23.0
     "@ribajs/events": "workspace:*"
     "@ribajs/nest-theme": "workspace:*"
     "@ribajs/ssr": "workspace:*"
+    "@test-center/prisma": "workspace:packages/prisma"
     "@types/consolidate": ^0.14.0
     "@types/cookie-parser": ^1.4.2
     "@types/express": ^4.17.11
@@ -3743,6 +3773,15 @@ __metadata:
     typescript: ^4.2.4
     whatwg-encoding: ^1.0.5
     yaml: next
+  languageName: unknown
+  linkType: soft
+
+"@test-center/prisma@workspace:packages/prisma":
+  version: 0.0.0-use.local
+  resolution: "@test-center/prisma@workspace:packages/prisma"
+  dependencies:
+    "@prisma/client": "*"
+    "@types/node": "*"
   languageName: unknown
   linkType: soft
 
@@ -15702,6 +15741,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"prisma@npm:2.23.0":
+  version: 2.23.0
+  resolution: "prisma@npm:2.23.0"
+  dependencies:
+    "@prisma/engines": 2.23.0-36.adf5e8cba3daf12d456d911d72b6e9418681b28b
+  bin:
+    prisma: build/index.js
+    prisma2: build/index.js
+  checksum: 23e6005656020886fe275e8c99e56a59861c553b10ceee247a5f707c611b2737bc6d1c89b9d8f167f115c43b5596b9878984449686d2c867a40762aa04721174
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:^2.0.0, process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -18394,6 +18445,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "test-center@workspace:."
   dependencies:
+    "@prisma/client": 2.23.0
     "@ribajs/eslint-config": "workspace:*"
     "@ribajs/iconset": "workspace:*"
     "@ribajs/tsconfig": "workspace:*"
@@ -18408,6 +18460,7 @@ fsevents@^1.2.7:
     eslint-plugin-prettier: ^3.4.0
     node-gyp: ^8.0.0
     prettier: ^2.3.0
+    prisma: 2.23.0
     pug: ^3.0.2
     typescript: ^4.2.4
   languageName: unknown
